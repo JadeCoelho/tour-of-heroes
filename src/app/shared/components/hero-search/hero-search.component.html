@@ -1,0 +1,11 @@
+<mat-form-field appearance="fill" class="pesquisa">
+  <mat-label>{{label}}</mat-label>
+  <input type="text" matInput placeholder="Nome do herói" #caixaBusca (input)="search(caixaBusca.value)" [matAutocomplete]="auto"/>
+  <button mat-icon-button matSuffix *ngIf="caixaBusca.value">
+    <mat-icon (click)="caixaBusca.value= ''">close</mat-icon>
+  </button>
+
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="caixaBusca.value=''; onSelected($event)">
+    <mat-option *ngFor="let hero of heroes$ | async" [value]='hero'>{{hero.name}}</mat-option>
+  </mat-autocomplete>
+</mat-form-field>

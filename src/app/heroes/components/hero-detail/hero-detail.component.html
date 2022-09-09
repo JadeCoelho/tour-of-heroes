@@ -1,0 +1,37 @@
+
+  <h1>{{ isEditing ? "Update" : "Create" }} Hero</h1>
+
+
+  <form [formGroup]="form" novalidate>
+    <mat-card>
+
+      <mat-card-content fxLayout="column">
+
+        <mat-form-field *ngIf="isEditing">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="id">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input id="name" matInput  type="text" id="name" placeholder="Nome" formControlName="name">
+        </mat-form-field>
+
+        <mat-error *ngIf="form.controls['name'].hasError('required')">
+          O nome é obrigatório.
+        </mat-error>
+        <mat-error *ngIf="form.controls['name'].hasError('minlength')">
+          O nome deve conter no mínimo 2 caracteres.
+        </mat-error>
+
+      </mat-card-content>
+
+      <mat-card-actions>
+       <button mat-raised-button (click)="create()" color="primary" *ngIf="!isEditing">Create</button>
+       <button mat-raised-button (click)="update()" color="primary" *ngIf="isEditing">Update</button>
+       <button mat-raised-button (click)="goBack()">Go back</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+
+

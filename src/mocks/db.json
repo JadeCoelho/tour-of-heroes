@@ -1,0 +1,44 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": " Capitão África"
+    },
+    {
+      "id": 2,
+      "name": " Mulher Pato"
+    },
+    {
+      "id": 3,
+      "name": " Bate em homem"
+    },
+    {
+      "id": 4,
+      "name": " Casada negra"
+    },
+    {
+      "id": 5,
+      "name": "Dr. Normal"
+    },
+    {
+      "id": 6,
+      "name": " Homem de plástico"
+    },
+    {
+      "id": 7,
+      "name": "Pantera parda"
+    },
+    {
+      "id": 8,
+      "name": "Feiticeira grená"
+    },
+    {
+      "name": "Homem fornica",
+      "id": 9
+    },
+    {
+      "name": "Construtor",
+      "id": 10
+    }
+  ]
+}

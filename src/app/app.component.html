@@ -1,2 +1,6 @@
-<h1>Alterei o título pra {{title}}</h1>
-<app-heroes></app-heroes>
+<app-toolbar [title]="title" [menuItems]="menuItems"></app-toolbar>
+<div class="content" fxLayoutGap="12px">
+  <app-loading></app-loading>
+  <router-outlet></router-outlet>
+  <app-messages></app-messages>
+</div>

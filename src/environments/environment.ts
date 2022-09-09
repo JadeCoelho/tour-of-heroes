@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  /*baseUrl: '/api',*/
+  baseUrl: 'https://curso-tour-of-heroes-api.herokuapp.com/api'
 };
 
 /*

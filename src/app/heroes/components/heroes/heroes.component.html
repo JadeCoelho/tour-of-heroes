@@ -1,0 +1,45 @@
+
+<h1 class="my-heroes">My heroes</h1>
+
+<button class="add-btn" color="accent" mat-fab routerLink="new">
+  <mat-icon>add</mat-icon>
+</button>
+
+<!--<ul class="heroes">
+  <li *ngFor="let hero of herois" routerLink="/heroes/{{hero.id}}"><span>{{hero.id}}</span>{{hero.name}}</li>
+</ul>-->
+
+<app-hero-search [label]="'Deletar herói'" (selected)="onSelected($event)">
+
+</app-hero-search>
+
+<mat-table [dataSource]="herois" class="mat-elevation-z6">
+  <!-- id -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+  </ng-container>
+
+  <!-- name -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+  </ng-container>
+
+  <!-- actions -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button mat-icon-button matTooltip="delete this item" (click)="$event.stopPropagation(); delete(row)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns" [routerLink]="['/heroes', row.id]"></mat-row>
+
+</mat-table>
+
+
